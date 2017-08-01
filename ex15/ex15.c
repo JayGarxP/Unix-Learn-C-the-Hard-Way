@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "str2int.h"
 
+void printValueatIntPointer(int *);
+
 int main(int argc, char * argv[])
 {
 	////	int ages[] = {23, 43, 12, 89, 2};
@@ -52,9 +54,19 @@ int main(int argc, char * argv[])
 	int six = 6;
 	ayjizz = &six;
 
-	printf("Who dat boi: %d \n", *ayjizz);
+	printValueatIntPointer(ayjizz);
+
+	printf("\n\nWho dat boi: %d \n", *ayjizz);
 
 	return 0;
+}
+
+void printValueatIntPointer(int * numberP){
+	if ( numberP == NULL){
+	printf("\nNull. Ya goofed it.\n");
+			}else{
+			printf("%d", *numberP);
+			}
 }
 
 /*
