@@ -6,31 +6,43 @@ void printValueatIntPointer(int *);
 
 int main(int argc, char * argv[])
 {
-	////	int ages[] = {23, 43, 12, 89, 2};
-	//	char* names[] = {
-	//	"Alien", "Fritz", "Maurice", "Joseph", "Abe"
-	//	};
-	//
-	//	int count = sizeof(ages) / sizeof(int);
-	//	int i = 0;
-	//
-	//	for (i = 0; i < count; i++){
-	//		printf("%s has %d years left to live \n", names[i], ages[i]);
-	//	}
-	//
-	//	int* cur_age = ages;
-	//	char** cur_name = names;
-	//
-	//	for(i = 0; i < count; i++){
-	//	printf("%s is %d years old...\n", *(cur_name + i), *(cur_age + i));
-	//	}
-	//
-	//	printf("----\n");
-	//
-	//	for (cur_name = names, cur_age = ages;
-	//			(cur_age - ages) < count; cur_name++, cur_age++){
-	//		printf("%s lived %d years so far \n", *cur_name, *cur_age);
-	//	}
+	int ages[] = {23, 43, 12, 89, 2};
+	char* names[] = {
+		"Alien", "Fritz", "Maurice", "Joseph", "Abe"
+	};
+
+	int count = sizeof(ages) / sizeof(int);
+	int i = 0;
+
+	//for (i = 0; i < count; i++){
+	//	printf("%s has %d years left to live \n", names[i], ages[i]);
+	//}
+
+	while (i < count){
+		printf("%s has %d years left \n", names[i], ages[i]);
+		i++;
+	}
+
+	printf("\n\n");
+
+	int* cur_age = ages;
+	char** cur_name = names;
+
+	for(i = 0; i < count; i++){
+		printf("%s is %d years old...\n", *(cur_name + i), *(cur_age + i));
+	}
+
+
+	printf("----\n");
+
+	//for (cur_name = names, cur_age = ages;
+	//		(cur_age - ages) < count; cur_name++, cur_age++){
+	//	printf("%s lived %d years so far \n", *cur_name, *cur_age);
+	//}
+
+	while( (cur_age - ages) < count){
+		printf("%s lived %d years so far \n", *cur_name++, *cur_age++);
+	}
 
 	//rewrite all the arrays as pointers, get age from command line
 	int * ayjizz = NULL;
@@ -63,10 +75,10 @@ int main(int argc, char * argv[])
 
 void printValueatIntPointer(int * numberP){
 	if ( numberP == NULL){
-	printf("\nNull. Ya goofed it.\n");
-			}else{
-			printf("%d", *numberP);
-			}
+		printf("\nNull. Ya goofed it.\n");
+	}else{
+		printf("%d", *numberP);
+	}
 }
 
 /*
