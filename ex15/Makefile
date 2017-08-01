@@ -1,4 +1,5 @@
 OBJS = ex15.o
+HEADERS = str2int.h
 CC = -gcc
 DEBUG = -g
 CFLAGS = -Wall -Wextra $(DEBUG)
@@ -10,5 +11,5 @@ all: clean jp
 clean:
 	rm -f $(OBJS)
 
-jp : $(OBJS)
+jp : $(OBJS) $(HEADERS)
 	$(CC) $(CFLAGS) $(OBJS) -o jp

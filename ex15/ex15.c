@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "str2int.h"
 
 int main(int argc, char * argv[])
 {
@@ -29,19 +30,29 @@ int main(int argc, char * argv[])
 	//		printf("%s lived %d years so far \n", *cur_name, *cur_age);
 	//	}
 
-	//rewrite all the arrays as pointers
-	int * ayjizz;
+	//rewrite all the arrays as pointers, get age from command line
+	int * ayjizz = NULL;
 	if (argc > 1){
 		int number = -1;
-		number = strtol(argv[1], NULL, 10); 
-		ayjizz = &number;
+		//number = strtol(argv[1], NULL, 10); //normal non-atoi way
+
+		ayjizz = &number; //int * to str2int can't be null, no error check in the str2int header yet tho
+
+		//str2int(ayjizz, argv[1], 10); //safer strtol wrapped way
+
+		assert(str2int(ayjizz, argv[1], 10) == STR2INT_SUCCESS);
+
+
 		printf("\nPapa Bless: %d\n\n", *ayjizz);
 	} else {printf("\nCome on now homey\n");}
+
+
+
+
 	int six = 6;
 	ayjizz = &six;
 
 	printf("Who dat boi: %d \n", *ayjizz);
-
 
 	return 0;
 }
