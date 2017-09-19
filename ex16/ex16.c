@@ -4,6 +4,7 @@
 #include <string.h>
 #include "str2int.h"
 //CygWin contains does NOT support all of POSIX, it actually sux. Can't check for memory leaks easily or fork() reliably. Going to have to switch to new environment. :(
+//typing this within ubuntu terminal on different machine from year 2010
 struct Person {
 	char*name;
 	int age;
