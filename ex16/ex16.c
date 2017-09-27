@@ -12,9 +12,19 @@ struct Person {
 	int weight;
 };
 
+//On certain machines and worse versions of C you will have to use gory syntax to avoid namespace issues;
+//for example, if you were using this struct in another file (forward declaration)
+//typedef struct UnimportantPerson {
+//	char*name;
+//	int age;
+//	int height;
+//	int weight;
+//}Person;
+
 struct Person* Person_create(char*name, int age, int height, int weight)
 {
 	struct Person* newPerson = malloc(sizeof(struct Person));
+	//Person * newPerson = malloc(sizeof(Person));
 	assert(newPerson != NULL); //malloc will point to NULL if malloc couldn't allocate any memory for ya
 
 	newPerson->name = strdup(name);
@@ -53,6 +63,15 @@ int main(int argc, char * argv[])
 
 	printf("Sarah is at memory location %p:\n", SarahBarthel);
 	Person_print(SarahBarthel);
+
+	Qui->age += 20;
+	Person_print(Qui);
+
+
+	Person_print(SarahBarthel);
+
+	Person_destroy(Qui);
+	Person_destroy(SarahBarthel);
 
 
 return 0;
