@@ -49,11 +49,21 @@ void Person_destroy(Person * whomst)
 //void Person_print(struct Person *who)
 void Person_print(Person* who)
 {
+	assert(who != NULL);
 	printf("Name: %s\n", who->name);
 	printf("\tAge: %d\n", who->age);
 	printf("\tHeight: %d\n", who->height);
 	printf("\tWeight: %d\n", who->weight);
 }
+
+void Person_printStack(Person hoo)
+{
+	printf("Name: %s\n", hoo.name);
+	printf("\tAge: %d\n", hoo.age);
+	printf("\tHighness: %d\n", hoo.height);
+	printf("\tWeight: %d\n\n", hoo.weight);
+}
+
 //If only I'd thought of the right words, I wouldn't be breaking apart
 
 int main(int argc, char * argv[])
@@ -77,6 +87,26 @@ int main(int argc, char * argv[])
 
 	Person_destroy(Qui);
 	Person_destroy(SarahBarthel);
+
+	//Assert test
+//	Person_destroy(NULL);
+//	C security check
+//	Person_print(NULL);
+
+
+	char Tsumtin[100]  = "Process";
+
+	Person Sampha;
+	Sampha.name = Tsumtin;
+	Sampha.age = 23;
+	Sampha.height = 1;
+	Sampha.weight = 6;
+
+	Person_printStack(Sampha);
+
+	Person* PlasticSampha = &Sampha;
+
+	Person_print(PlasticSampha);
 
 
 return 0;
