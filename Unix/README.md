@@ -1,9 +1,11 @@
-# This Directory Contains:
-## Unix Programs 
-(Directory Comparison, Doxygen Ripoff, #compare, HardLinkFinder)
+* This Directory Contains: *
+## Unix Programs
+Bash scripts and C executables
+Directory Comparison, Doxygen Ripoff, #compare, HardLinkFinder
 
 ## Example Shell Environment Variables 
-(.vimrc to fill new files with templates .c .cpp .sh, .login script to set $PS1, etc.)
+.vimrc to fill new files with templates .c .cpp .sh
+ .login script to set $PS1 (Custom command prompt colors), etc.
 
 
 
