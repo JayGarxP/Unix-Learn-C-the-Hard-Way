@@ -1,0 +1,20 @@
+alias rm="rm -i"
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+#This sets the colors for LS; since PUTTY SSH overrides your colors,
+#	Right click this window and click change settings -> window -> colours
+#	Now you can set custom colors for magenta, blue, red, ylw, grn, white
+#	black and their bold counterparts, Putty can sub in any color for these
+# Do not even try to mess with dircolors or anything fun/cool/special it will Fail
+
+#one line search web for 'ask ubuntu how change ls colors' for more info
+#0 is default color, 1 is default bold color, etc.
+LS_COLORS=$LS_COLORS:'di=1:ex=32:*.txt=35:*.c=36:*.h=34:*.exe=32'
+export PS1="\[\033[0;36m\] @jp\[\e[92m\]\W\$ \[\033[0m\]"
+
+echo " -----------------------~~~~~~=== J P F ===~~~~~~-------------------------"
