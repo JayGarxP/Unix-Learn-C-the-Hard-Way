@@ -1,4 +1,4 @@
-* This Directory Contains: *
+*This Directory Contains:*
 ## Unix Programs
 Bash scripts and C executables
 Directory Comparison, Doxygen Ripoff, #compare, HardLinkFinder
